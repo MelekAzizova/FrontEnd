@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Animasiya6</title>
+</head>
+<body>
+    <!-- inspired by https://en.wikipedia.org/wiki/Mechanically_powered_flashlight -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<div id="background" class="background">
+  <div class="sliders">
+    <span id="highIcon" class="material-symbols-rounded">backlight_high</span>
+    <input id="slider" type="range" name="slider" min="0" max="100" step="1" value="80">
+    <button id="buttonClick" type="button" onclick="onClick();">
+    </button>
+    <!--     <button id="buttonSet" type="button" onclick="toggleSetValue();">
+      <span class="material-symbols-rounded">done</span>
+      <span class="material-symbols-rounded d-none">close</span>
+    </button> -->
+  </div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Animasiya2</title>
+</head>
+<body>
+    <div class="controls">
+        <div class="control">
+          <label for="amount"># of elements:</label>
+          <input id="amount" type="range" min="1" max="1000" value="625" />
+        </div>
+        <div class="control">
+          <fieldset>
+            <legend>color:</legend>
+            <label for="rgb">
+              RGB
+              <input type="radio" id="rgb" name="color" value="rgb" />
+            </label>
+            <label for="oklch">
+              OKLCH
+              <input checked type="radio" id="oklch" name="color" value="oklch" />
+            </label>
+          </fieldset>
+        </div>
+      </div>
+      <div class="container oklch"></div>
+      <div class="support-notice">
+        ❗️ OKLCH colors are not supported in your browser
+        <span>(click to hide)</span>
+      </div>
+    <script src="app.js"></script>
+</body>
+</html>

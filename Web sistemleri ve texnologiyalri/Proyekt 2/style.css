@@ -1,0 +1,121 @@
+:root {
+    --size: 4vmin;
+    --max-size: 400px;
+  }
+  
+  body {
+    height: 100dvh;
+    overflow: hidden;
+    margin: 0;
+    background: linear-gradient(
+      135deg,
+      #111, #000
+    );
+    color: #eee;
+    font-family: "Operator Mono", menlo, monaco, monospace;
+  }
+  
+  .controls {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2vmin;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .control label {
+    white-space: nowrap;
+  }
+  
+  .support-notice {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.5em;
+    cursor: pointer;
+  }
+  
+  .support-notice span {
+    font-size: 0.7em;
+  }
+  
+  .support-notice.hidden {
+    display: none;
+  }
+  
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--size);
+    height: var(--size);
+  }
+  
+  .container div {
+    --deg: calc(var(--i) * (360deg / var(--amount)));
+    position: absolute;
+    left: calc(
+      var(--size) +
+      var(--size) * cos(var(--deg))
+    );
+    top: calc(
+      var(--size) +
+      var(--size) * sin(var(--deg))
+    );
+    background: hsl(var(--deg), 85.5%, 55%);
+    width: 0.3vmin;
+    height: min(calc(var(--size) * 3), var(--max-size));
+    transform-origin: top center;
+    transform: rotate(var(--deg));
+    animation:
+      color 10s calc(var(--i) * -100ms) linear infinite,
+      height 5s calc(var(--i) * -40ms) linear infinite;
+  }
+  
+  @supports (color: oklch(85.2% 0.359 100)) {
+    .support-notice {
+      display: none;
+    }
+  
+    .container.oklch div {
+      background: oklch(85.2% 0.359 var(--deg));
+      animation:
+        color-oklch 10s calc(var(--i) * -100ms) linear infinite,
+        height 5s calc(var(--i) * -40ms) linear infinite;
+    }
+  }
+  
+  @keyframes color {
+    33% {
+      background: hsl(calc(var(--deg) * -10), 85.5%, 55%);
+    }
+    66% {
+      background: hsl(calc(var(--deg) * 10), 85.5%, 55%);
+    }
+  }
+  
+  @keyframes color-oklch {
+    33% {
+      background: oklch(85.2% 0.359 calc(var(--deg) * -10));
+    }
+    66% {
+      background: oklch(85.2% 0.359 calc(var(--deg) * 10));
+    }
+  }
+  
+  @keyframes height {
+   90% {
+      height: calc(var(--size) * 10);
+    }
+  }

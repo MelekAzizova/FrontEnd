@@ -1,0 +1,110 @@
+body{
+  
+}
+
+.container {
+  // font-family: 'DM Mono', monospace;
+  // font-family: 'Abril Fatface', cursive;
+font-family: 'Inter', sans-serif;
+font-weight:800;
+  // font-family:arial;
+  width: 100vw;
+  height: 100vh;
+  background: #f3f3f3;
+  // background: navy;
+  position: relative;
+  .card-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .card {
+    border-radius: 0px;
+    border-radius: 0px;
+    background: #ffffff;
+    box-shadow: inset 20px 20px 60px #d9d9d9, inset -20px -20px 60px #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 90vh;
+    border: 1px solid rgba(#000,.15);
+    &:before {
+      content: "";
+      width: 450px;
+      height: 300px;
+    width: 90vw;
+    height: 90vh;      
+      left: 2px;
+      z-index: -1;
+      position: absolute;
+      
+    box-shadow: 1px 1px 0px #f3f3f3,
+                2px 2px 0px #f3f3f3,
+                3px 3px 0px #f3f3f3,
+                4px 4px 0px #f3f3f3,
+                5px 5px 0px #f3f3f3,
+                6px 6px 0px #f3f3f3;
+    }
+
+    .inner {
+      // border:2px solid red;
+      width: 430px;
+      height: 280px;
+      width:88vw;
+      height:87vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    background: linear-gradient(146deg,#ECE9E6, #FFFFFF,  #FFEDBC, #78fcfa, pink, gold);
+    background-size: 600% 600%;
+
+    -webkit-animation: bk 15s ease infinite;
+    -moz-animation: bk 15s ease infinite;
+    animation: bk 20s ease infinite;
+    }
+    .center {
+      width: 415px;
+      height: 265px;
+      width:97%;
+      height:95%;      
+      border-radius: 0px;
+      background: transparent;
+      box-shadow: inset 20px 20px 60px #d9d9d9, inset -20px -20px 60px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h1{
+
+        font-size: 6rem;
+        font-size:clamp(2.25rem, -0.2115rem + 10.94vw, 6.5625rem );
+        font-weight: 800;
+        letter-spacing: -3px;
+        
+        color:transparent;
+        color:rgba(#232323,.8);
+        mix-blend-mode: hard-light;
+
+      }
+    }
+  }
+}
+
+
+@-webkit-keyframes bk {
+    0%{background-position:18% 0%}
+    50%{background-position:83% 100%}
+    100%{background-position:18% 0%}
+}
+@-moz-keyframes bk {
+    0%{background-position:18% 0%}
+    50%{background-position:83% 100%}
+    100%{background-position:18% 0%}
+}
+@keyframes bk {
+    0%{background-position:18% 0%}
+    50%{background-position:83% 100%}
+    100%{background-position:18% 0%}
+}
